@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+  h1.mt-5 #{book.title} 
+    a.btn.btn-primary(href='./' + book.id + '/update') Edit
+  p Author: #{book.author}
+  p Number of Pages: #{book.numPages}

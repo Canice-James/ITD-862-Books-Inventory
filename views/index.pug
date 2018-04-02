@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+  h1.mt-5 Books Inventory 
+    a.btn.btn-primary(href='./books/new') New
+  table.table
+    thead
+      tr
+        th(scope='col') Title
+        th(scope='col') Author
+        th(scope='col') Number of Pages
+        th(scope='col') 
+    tbody
+      each book in books
+        tr
+          td= book.title
+          td= book.author
+          td= book.numPages
+          td 
+            a.btn.btn-primary(href='./books/' + book.id) View
+            form(action='/books/' + book.id + '/delete' method="POST")
+              button.btn.btn-danger(type='submit') Delete
